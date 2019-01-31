@@ -1,9 +1,10 @@
 from Bio import Phylo 
 import pylab 
+import sys
+print(sys.argv)
 
-a=input()
 def draw_tree(path_to_file):
-	tree = Phylo.read(a, 'newick') 
+	tree = Phylo.read(sys.argv[1], 'newick') 
 	tree.ladderize() 
 
 	Phylo.draw(tree, label_func= str, show_confidence = True, do_show=False)
