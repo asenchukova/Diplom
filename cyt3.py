@@ -1,7 +1,9 @@
 from Bio import Phylo 
 import pylab 
+
+a=input()
 def draw_tree(path_to_file):
-	tree = Phylo.read('RAxML_bipartitionsBranchLabels.T20', 'newick') 
+	tree = Phylo.read(a, 'newick') 
 	tree.ladderize() 
 
 	Phylo.draw(tree, label_func= str, show_confidence = True, do_show=False)
